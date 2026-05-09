@@ -11,9 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ─────────────────────────────
-       BASE RESET
-    ───────────────────────────── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -25,9 +22,7 @@
       overflow-x: hidden;
     }
 
-    /* ─────────────────────────────
-       LOADER
-    ───────────────────────────── */
+    /* LOADER */
     #loader {
       position: fixed; inset: 0; z-index: 9999;
       background: #0d1f15;
@@ -36,7 +31,6 @@
       transition: opacity 1s ease, visibility 1s ease;
     }
     #loader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-
     .ld-ring {
       width: 64px; height: 64px;
       border-radius: 50%;
@@ -47,7 +41,6 @@
       margin-bottom: 1.6rem;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-
     .ld-text {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -56,9 +49,7 @@
       letter-spacing: 0.25em;
     }
 
-    /* ─────────────────────────────
-       FIXED NAV
-    ───────────────────────────── */
+    /* NAV */
     #nav {
       position: fixed; top: 0; left: 0; width: 100%;
       z-index: 1000;
@@ -81,9 +72,7 @@
     }
     #nav a:hover { color: #f0e0b8; }
 
-    /* ─────────────────────────────
-       HERO  (#home)
-    ───────────────────────────── */
+    /* HERO */
     #home {
       min-height: 100vh;
       background:
@@ -93,15 +82,11 @@
           rgba(10,24,15,0.80) 100%),
         url('couple-portrait.jpg') center center / cover no-repeat;
       background-color: #0d1f15;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center;
       padding: 8rem 1.5rem 5rem;
     }
-
-    /* ── couple photo circle ── */
     .hero-photo {
       width: 210px; height: 210px;
       border-radius: 50%;
@@ -115,33 +100,22 @@
       flex-shrink: 0;
       box-shadow: 0 0 60px rgba(0,0,0,0.5);
     }
-    .hero-photo img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hero-photo-placeholder {
-      /* shown when no image */
       display: flex; align-items: center; justify-content: center;
       width: 100%; height: 100%;
       font-size: 3.5rem; opacity: 0.3;
     }
-
-    /* ── "The Wedding of" tag ── */
     .hero-eyebrow {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 0.68rem;
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: rgba(201,169,110,0.65);
-      margin-bottom: 1.1rem;
+      font-weight: 400; font-size: 0.68rem;
+      letter-spacing: 0.45em; text-transform: uppercase;
+      color: rgba(201,169,110,0.65); margin-bottom: 1.1rem;
     }
-
-    /* ── NAMES ── */
     .hero-names {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(3.4rem, 12vw, 7rem);
-      color: #f0e0b8;
-      line-height: 0.95;
+      color: #f0e0b8; line-height: 0.95;
       text-shadow: 0 2px 30px rgba(0,0,0,0.5);
     }
     .hero-amp {
@@ -150,442 +124,245 @@
       font-style: italic;
       font-size: clamp(1.1rem, 3vw, 1.6rem);
       color: rgba(201,169,110,0.7);
-      letter-spacing: 0.3em;
-      margin: 0.5rem 0;
+      letter-spacing: 0.3em; margin: 0.5rem 0;
     }
-
-    /* ── thin gold divider ── */
     .gold-divider {
       width: 80px; height: 1px;
       background: linear-gradient(to right, transparent, #c9a96e, transparent);
       margin: 1.8rem auto;
     }
-
-    /* ── verse / quote ── */
     .hero-verse {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(0.88rem, 2.2vw, 1.05rem);
-      line-height: 1.9;
-      color: rgba(232,224,208,0.65);
-      max-width: 400px;
-      margin: 0 auto 2.8rem;
+      line-height: 1.9; color: rgba(232,224,208,0.65);
+      max-width: 400px; margin: 0 auto 2.8rem;
     }
     .hero-verse cite {
-      display: block;
-      font-style: normal;
-      font-size: 0.78em;
-      letter-spacing: 0.15em;
-      color: rgba(201,169,110,0.6);
-      margin-top: 0.5rem;
+      display: block; font-style: normal;
+      font-size: 0.78em; letter-spacing: 0.15em;
+      color: rgba(201,169,110,0.6); margin-top: 0.5rem;
     }
-
-    /* ── CTA buttons ── */
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
     .btn {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.8rem 2.2rem;
+      font-weight: 400; font-size: 0.68rem;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      text-decoration: none; padding: 0.8rem 2.2rem;
       border: 1px solid rgba(201,169,110,0.7);
-      border-radius: 0;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: inline-block;
+      border-radius: 0; cursor: pointer;
+      transition: all 0.3s; display: inline-block;
     }
     .btn-gold  { background: #c9a96e; color: #0d1f15; border-color: #c9a96e; }
     .btn-gold:hover  { background: #dfc07e; border-color: #dfc07e; }
     .btn-ghost { background: transparent; color: rgba(201,169,110,0.85); }
     .btn-ghost:hover { background: rgba(201,169,110,0.1); }
 
-    /* ─────────────────────────────
-       SHARED SECTION STYLES
-    ───────────────────────────── */
+    /* SECTIONS */
     section { padding: 6rem 1.5rem; }
-
     .sec-center { text-align: center; }
-
     .sec-eyebrow {
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: #c9a96e;
-      margin-bottom: 0.7rem;
+      font-size: 0.65rem; font-weight: 400;
+      letter-spacing: 0.45em; text-transform: uppercase;
+      color: #c9a96e; margin-bottom: 0.7rem;
     }
     .sec-title {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.4rem, 7vw, 3.8rem);
-      color: #f0e0b8;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .sec-body {
-      font-size: 0.92rem;
-      font-weight: 300;
-      line-height: 2.1;
-      color: rgba(232,224,208,0.65);
-      max-width: 480px;
-      margin: 0 auto;
+      color: #f0e0b8; line-height: 1.1; margin-bottom: 1rem;
     }
 
-    /* ─────────────────────────────
-       INVITATION (#invitation)
-    ───────────────────────────── */
-    #invitation {
-      background: #0d1f15;
-    }
-
-    /* invite card */
+    /* INVITATION */
+    #invitation { background: #0d1f15; }
     .invite-card {
-      max-width: 500px;
-      margin: 3rem auto 4rem;
+      max-width: 500px; margin: 3rem auto 4rem;
       border: 1px solid rgba(201,169,110,0.25);
-      padding: 3.5rem 2.8rem;
-      text-align: center;
-      position: relative;
-      background: rgba(255,255,255,0.025);
+      padding: 3.5rem 2.8rem; text-align: center;
+      position: relative; background: rgba(255,255,255,0.025);
     }
     .invite-card::before {
-      content: '';
-      position: absolute;
-      inset: 9px;
-      border: 1px solid rgba(201,169,110,0.1);
-      pointer-events: none;
+      content: ''; position: absolute; inset: 9px;
+      border: 1px solid rgba(201,169,110,0.1); pointer-events: none;
     }
-
     .ic-symbol {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      color: #c9a96e;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.8rem;
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; color: #c9a96e;
+      letter-spacing: 0.1em; margin-bottom: 1.8rem;
     }
     .ic-intro {
-      font-size: 0.88rem;
-      font-weight: 300;
-      line-height: 2;
-      color: rgba(232,224,208,0.6);
-      margin-bottom: 0.4rem;
+      font-size: 0.88rem; font-weight: 300;
+      line-height: 2; color: rgba(232,224,208,0.6); margin-bottom: 0.4rem;
     }
     .ic-names {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.2rem, 7vw, 3rem);
-      color: #f0e0b8;
-      line-height: 1.2;
-      display: block;
-      margin: 0.5rem 0 1.4rem;
+      color: #f0e0b8; line-height: 1.2;
+      display: block; margin: 0.5rem 0 1.4rem;
     }
     .ic-date {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.2em;
-      color: #c9a96e;
-      display: block;
-      margin-bottom: 0.2rem;
+      font-size: 1.05rem; letter-spacing: 0.2em;
+      color: #c9a96e; display: block; margin-bottom: 0.2rem;
     }
     .ic-sub {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      color: rgba(201,169,110,0.55);
-      display: block;
-      margin-bottom: 1.6rem;
+      font-size: 0.8rem; letter-spacing: 0.18em;
+      color: rgba(201,169,110,0.55); display: block; margin-bottom: 1.6rem;
     }
     .ic-body {
-      font-size: 0.88rem;
-      font-weight: 300;
-      line-height: 2;
-      color: rgba(232,224,208,0.6);
+      font-size: 0.88rem; font-weight: 300;
+      line-height: 2; color: rgba(232,224,208,0.6);
     }
 
-    /* ── COUNTDOWN ── */
+    /* COUNTDOWN */
     .countdown {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 480px;
-      margin: 0 auto;
+      display: flex; gap: 1.5rem; justify-content: center;
+      flex-wrap: wrap; max-width: 480px; margin: 0 auto;
     }
-    .cd-box {
-      text-align: center;
-      flex: 1 1 80px;
-    }
+    .cd-box { text-align: center; flex: 1 1 80px; }
     .cd-num {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 3rem;
-      color: #f0e0b8;
-      line-height: 1;
-      padding-bottom: 0.5rem;
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 3rem; color: #f0e0b8;
+      line-height: 1; padding-bottom: 0.5rem;
       border-bottom: 1px solid rgba(201,169,110,0.3);
-      margin-bottom: 0.6rem;
-      min-width: 72px;
+      margin-bottom: 0.6rem; min-width: 72px;
     }
     .cd-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(201,169,110,0.55);
+      font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: rgba(201,169,110,0.55);
     }
 
-    /* ─────────────────────────────
-       CEREMONY (#ceremony)
-    ───────────────────────────── */
-    #ceremony {
-      background: #0a1910;
-    }
-
+    /* CEREMONY */
+    #ceremony { background: #0a1910; }
     .cer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      max-width: 960px;
-      margin: 3rem auto 0;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1.5rem; max-width: 960px; margin: 3rem auto 0;
     }
     .cer-card {
-      flex: 1 1 240px;
-      max-width: 280px;
+      flex: 1 1 240px; max-width: 280px;
       border: 1px solid rgba(201,169,110,0.22);
-      padding: 2.6rem 1.8rem 2rem;
-      text-align: center;
+      padding: 2.6rem 1.8rem 2rem; text-align: center;
       background: rgba(255,255,255,0.02);
-      transition: background 0.3s, transform 0.3s;
-      position: relative;
+      transition: background 0.3s, transform 0.3s; position: relative;
     }
     .cer-card::after {
-      content: '';
-      position: absolute;
-      inset: 6px;
-      border: 1px solid rgba(201,169,110,0.07);
-      pointer-events: none;
+      content: ''; position: absolute; inset: 6px;
+      border: 1px solid rgba(201,169,110,0.07); pointer-events: none;
     }
-    .cer-card:hover {
-      background: rgba(255,255,255,0.04);
-      transform: translateY(-4px);
-    }
-
+    .cer-card:hover { background: rgba(255,255,255,0.04); transform: translateY(-4px); }
     .cer-icon { font-size: 1.8rem; display: block; margin-bottom: 1.2rem; }
     .cer-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 0.68rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: #c9a96e;
-      margin-bottom: 1.4rem;
+      font-family: 'Montserrat', sans-serif; font-weight: 400;
+      font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: #c9a96e; margin-bottom: 1.4rem;
     }
-    .cer-info {
-      font-size: 0.88rem;
-      font-weight: 300;
-      line-height: 2.1;
-      color: rgba(232,224,208,0.65);
-    }
+    .cer-info { font-size: 0.88rem; font-weight: 300; line-height: 2.1; color: rgba(232,224,208,0.65); }
     .cer-info strong {
-      display: block;
-      font-weight: 400;
-      color: #f0e0b8;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1rem;
-      margin-bottom: 0.1rem;
+      display: block; font-weight: 400; color: #f0e0b8;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1rem; margin-bottom: 0.1rem;
     }
     .cer-link {
-      display: inline-block;
-      margin-top: 1.8rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(201,169,110,0.7);
-      text-decoration: none;
-      border: 1px solid rgba(201,169,110,0.35);
-      padding: 0.55rem 1.4rem;
+      display: inline-block; margin-top: 1.8rem; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: rgba(201,169,110,0.7); text-decoration: none;
+      border: 1px solid rgba(201,169,110,0.35); padding: 0.55rem 1.4rem;
       transition: all 0.25s;
     }
     .cer-link:hover { background: rgba(201,169,110,0.1); color: #f0e0b8; border-color: rgba(201,169,110,0.6); }
 
-    /* ─────────────────────────────
-       CONTACT (#contact)
-    ───────────────────────────── */
-    #contact {
-      background: #0d1f15;
-    }
-
+    /* CONTACT */
+    #contact { background: #0d1f15; }
     .warmly-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: rgba(201,169,110,0.55);
-      margin: 0.8rem 0 2.8rem;
-      letter-spacing: 0.05em;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.05rem; color: rgba(201,169,110,0.55);
+      margin: 0.8rem 0 2.8rem; letter-spacing: 0.05em;
     }
-
     .con-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      max-width: 840px;
-      margin: 0 auto 3rem;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1.2rem; max-width: 840px; margin: 0 auto 3rem;
     }
     .con-card {
-      flex: 1 1 140px;
-      max-width: 175px;
+      flex: 1 1 140px; max-width: 175px;
       border: 1px solid rgba(201,169,110,0.2);
-      padding: 1.8rem 1.2rem;
-      text-align: center;
-      background: rgba(255,255,255,0.02);
-      transition: background 0.3s;
+      padding: 1.8rem 1.2rem; text-align: center;
+      background: rgba(255,255,255,0.02); transition: background 0.3s;
     }
     .con-card:hover { background: rgba(255,255,255,0.04); }
-
     .con-name {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.75rem;
-      color: #f0e0b8;
-      display: block;
-      line-height: 1.15;
-      margin-bottom: 0.4rem;
+      font-family: 'Great Vibes', cursive; font-size: 1.75rem;
+      color: #f0e0b8; display: block; line-height: 1.15; margin-bottom: 0.4rem;
     }
     .con-role {
-      font-size: 0.62rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(201,169,110,0.55);
-      display: block;
+      font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(201,169,110,0.55); display: block;
     }
     .con-phone {
-      display: block;
-      margin-top: 0.8rem;
-      font-size: 0.82rem;
-      color: rgba(232,224,208,0.5);
-      text-decoration: none;
-      transition: color 0.2s;
+      display: block; margin-top: 0.8rem; font-size: 0.82rem;
+      color: rgba(232,224,208,0.5); text-decoration: none; transition: color 0.2s;
     }
     .con-phone:hover { color: #c9a96e; }
 
-    .con-main-phone {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-style: italic;
-      color: rgba(201,169,110,0.8);
-      display: block;
-      margin-top: 0.5rem;
-    }
-    .con-main-phone a {
-      color: inherit; text-decoration: none;
-      transition: color 0.2s;
-    }
-    .con-main-phone a:hover { color: #f0e0b8; }
-
-    /* ─────────────────────────────
-       FOOTER
-    ───────────────────────────── */
+    /* FOOTER */
     footer {
-      background: #0a1910;
-      padding: 4rem 1.5rem 2.5rem;
-      text-align: center;
-      border-top: 1px solid rgba(201,169,110,0.12);
+      background: #0a1910; padding: 4rem 1.5rem 2.5rem;
+      text-align: center; border-top: 1px solid rgba(201,169,110,0.12);
     }
     .ft-names {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.2rem, 7vw, 3.4rem);
-      color: #f0e0b8;
-      display: block;
-      margin-bottom: 0.5rem;
+      color: #f0e0b8; display: block; margin-bottom: 0.5rem;
     }
     .ft-date {
-      font-size: 0.68rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: rgba(201,169,110,0.5);
-      margin-bottom: 0.7rem;
-      display: block;
+      font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: rgba(201,169,110,0.5); margin-bottom: 0.7rem; display: block;
     }
     .ft-msg {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: rgba(232,224,208,0.4);
-      margin-bottom: 2.5rem;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 0.95rem; color: rgba(232,224,208,0.4); margin-bottom: 2.5rem;
     }
     .ft-nav {
-      display: flex; justify-content: center;
-      gap: 2.5rem; flex-wrap: wrap;
-      padding-top: 1.8rem;
-      border-top: 1px solid rgba(201,169,110,0.1);
+      display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+      padding-top: 1.8rem; border-top: 1px solid rgba(201,169,110,0.1);
     }
     .ft-nav a {
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(201,169,110,0.45);
-      text-decoration: none;
-      transition: color 0.25s;
+      font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: rgba(201,169,110,0.45); text-decoration: none; transition: color 0.25s;
     }
     .ft-nav a:hover { color: #c9a96e; }
 
-    /* ─────────────────────────────
-       MUSIC BUTTON
-    ───────────────────────────── */
+    /* MUSIC BUTTON */
     #music-btn {
-      position: fixed;
-      bottom: 1.5rem; right: 1.5rem;
-      z-index: 999;
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
       display: flex; align-items: center; gap: 0.5rem;
       background: rgba(10,25,15,0.9);
       border: 1px solid rgba(201,169,110,0.4);
       color: rgba(201,169,110,0.85);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.65rem 1.1rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      backdrop-filter: blur(8px);
+      font-family: 'Montserrat', sans-serif; font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 0.65rem 1.1rem; cursor: pointer;
+      transition: all 0.25s; backdrop-filter: blur(8px);
     }
     #music-btn:hover { background: rgba(201,169,110,0.12); color: #f0e0b8; }
     #music-btn .music-icon { font-size: 1rem; }
 
-    /* ─────────────────────────────
-       REVEAL ANIMATION
-    ───────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal.delay-1 { transition-delay: 0.1s; }
     .reveal.delay-2 { transition-delay: 0.2s; }
     .reveal.delay-3 { transition-delay: 0.3s; }
 
-    /* ─────────────────────────────
-       FLOATING PETALS
-    ───────────────────────────── */
+    /* PETALS */
     .petal {
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      animation: petalFall linear infinite;
-      opacity: 0;
-      user-select: none;
+      position: fixed; pointer-events: none; z-index: 9998;
+      animation: petalFall linear infinite; opacity: 0; user-select: none;
     }
     @keyframes petalFall {
       0%   { transform: translateY(-30px) rotate(0deg);   opacity: 0.6; }
       100% { transform: translateY(110vh)  rotate(400deg); opacity: 0;   }
     }
 
-    /* ─────────────────────────────
-       RESPONSIVE
-    ───────────────────────────── */
+    /* RESPONSIVE */
     @media (max-width: 600px) {
       #nav { gap: 1.5rem; padding: 0.9rem 1rem; }
       #nav a { font-size: 0.62rem; letter-spacing: 0.2em; }
@@ -599,17 +376,13 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════
-     LOADER
-══════════════════════════════ -->
+<!-- LOADER -->
 <div id="loader">
   <div class="ld-ring"></div>
   <p class="ld-text">Inviting Grace...</p>
 </div>
 
-<!-- ══════════════════════════════
-     NAVIGATION
-══════════════════════════════ -->
+<!-- NAV -->
 <nav id="nav">
   <a href="#home">Home</a>
   <a href="#invitation">Invite</a>
@@ -617,16 +390,8 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- ══════════════════════════════
-     HERO — #home
-══════════════════════════════ -->
+<!-- HERO -->
 <section id="home">
-
-  <!-- 
-    TO ADD YOUR PHOTO:
-    Place your photo file named "couple-portrait.jpg" in the same folder as index.html.
-    It will automatically appear here.
-  -->
   <div class="hero-photo">
     <img
       src="couple-portrait.jpg"
@@ -656,67 +421,40 @@
     <a href="#invitation" class="btn btn-gold">View Invitation</a>
     <a href="#ceremony"   class="btn btn-ghost">Ceremony Details</a>
   </div>
-
 </section>
 
-
-<!-- ══════════════════════════════
-     SAVE THE DATE — #invitation
-══════════════════════════════ -->
+<!-- INVITATION -->
 <section id="invitation" class="sec-center">
-
   <p class="sec-eyebrow reveal">Save the Date</p>
   <h2 class="sec-title reveal delay-1">Our Wedding Invitation</h2>
 
   <div class="invite-card reveal delay-2">
     <span class="ic-symbol">✦ &nbsp; ✦ &nbsp; ✦</span>
-
     <p class="ic-intro">Together with their families,</p>
-
     <span class="ic-names">Selvakumar &amp; Swathy</span>
-
     <span class="ic-date">Monday, 28th May 2026</span>
     <span class="ic-sub">At 10:00 AM</span>
-
     <p class="ic-body">
-      Together with our parents,<br>
+      Together with our parents &amp; friends,<br>
       we request the honor of your presence<br>
       on this special day.
     </p>
   </div>
 
   <div class="countdown reveal delay-3" id="countdown">
-    <div class="cd-box">
-      <span class="cd-num" id="cd-d">00</span>
-      <span class="cd-label">Days</span>
-    </div>
-    <div class="cd-box">
-      <span class="cd-num" id="cd-h">00</span>
-      <span class="cd-label">Hours</span>
-    </div>
-    <div class="cd-box">
-      <span class="cd-num" id="cd-m">00</span>
-      <span class="cd-label">Mins</span>
-    </div>
-    <div class="cd-box">
-      <span class="cd-num" id="cd-s">00</span>
-      <span class="cd-label">Secs</span>
-    </div>
+    <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-label">Days</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Hours</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">00</span><span class="cd-label">Mins</span></div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Secs</span></div>
   </div>
-
 </section>
 
-
-<!-- ══════════════════════════════
-     CEREMONY DETAILS — #ceremony
-══════════════════════════════ -->
+<!-- CEREMONY -->
 <section id="ceremony" class="sec-center">
-
   <p class="sec-eyebrow reveal">When &amp; Where</p>
   <h2 class="sec-title reveal delay-1">Ceremony Details</h2>
 
   <div class="cer-grid">
-
     <div class="cer-card reveal delay-1">
       <span class="cer-icon">🛕</span>
       <div class="cer-title">Wedding Ceremony</div>
@@ -728,44 +466,30 @@
       </div>
       <a href="https://maps.app.goo.gl/ofzgAZVoW93NAPW46?g_st=ic" target="_blank" class="cer-link">Navigate</a>
     </div>
-
-
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════
-     CONTACT — #contact
-══════════════════════════════ -->
+<!-- CONTACT -->
 <section id="contact" class="sec-center">
-
   <p class="sec-eyebrow reveal">Get in Touch</p>
   <h2 class="sec-title reveal delay-1">Contact Information</h2>
   <p class="warmly-text reveal delay-2">Warmly Welcome</p>
 
   <div class="con-grid reveal delay-2">
-
     <div class="con-card">
       <span class="con-name">Vijayakumar</span>
       <span class="con-role">Family</span>
       <a class="con-phone" href="tel:9976446093">9976446093</a>
     </div>
-
     <div class="con-card">
       <span class="con-name">Shejin</span>
       <span class="con-role">Family</span>
       <a class="con-phone" href="tel:9567011452">9567011452</a>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- ══════════════════════════════
-     FOOTER
-══════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <span class="ft-names">Selvakumar &amp; Swathy</span>
   <span class="ft-date">28 · 05 · 2026</span>
@@ -778,43 +502,142 @@
   </nav>
 </footer>
 
-
-<!-- ══════════════════════════════
-     MUSIC BUTTON
-══════════════════════════════ -->
+<!-- MUSIC BUTTON -->
 <div id="music-btn">
   <span class="music-icon">♪</span>
   <span id="music-label">Play Music</span>
 </div>
 
-<!-- Replace "wedding-music.mp3" with your own audio file -->
-<audio id="bg-audio" loop>
-  <source src="wedding-music.mp3" type="audio/mpeg">
-</audio>
-
+<!--
+  ════════════════════════════════════════
+  YOUTUBE PLAYER  —  Ullam Paadum Paadal
+  (2 States) — Video ID: RcLNQgelZgs
+  Rendered at 1×1 px, opacity near-zero,
+  inside the visible DOM so browsers
+  do NOT block audio after user click.
+  ════════════════════════════════════════
+-->
+<div id="yt-wrap" style="
+  position:fixed; bottom:0; right:0;
+  width:1px; height:1px;
+  opacity:0.01; overflow:hidden;
+  pointer-events:none; z-index:1;">
+  <!-- YouTube iframe injected here on first click -->
+</div>
 
 <script>
-/* ── LOADER ── */
-window.addEventListener('load', () => {
-  setTimeout(() => {
+/* ════════════════════════════════
+   YOUTUBE IFrame API
+════════════════════════════════ */
+var ytPlayer      = null;
+var ytAPIReady    = false;
+var ytAPILoading  = false;
+var pendingPlay   = false;
+
+function loadYouTubeAPI() {
+  if (ytAPILoading) return;
+  ytAPILoading = true;
+  var s = document.createElement('script');
+  s.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(s);
+}
+
+/* called automatically by YouTube API once script loads */
+window.onYouTubeIframeAPIReady = function () {
+  ytAPIReady = true;
+
+  /* create a real div for the player inside #yt-wrap */
+  var playerDiv = document.createElement('div');
+  playerDiv.id = 'yt-player-el';
+  document.getElementById('yt-wrap').appendChild(playerDiv);
+
+  ytPlayer = new YT.Player('yt-player-el', {
+    width:  '1',
+    height: '1',
+    videoId: 'RcLNQgelZgs',          /* Ullam Paadum Paadal — 2 States */
+    playerVars: {
+      autoplay:       1,
+      loop:           1,
+      playlist:       'RcLNQgelZgs',
+      controls:       0,
+      disablekb:      1,
+      fs:             0,
+      rel:            0,
+      modestbranding: 1
+    },
+    events: {
+      onReady: function (e) {
+        e.target.setVolume(80);
+        if (pendingPlay) {
+          e.target.playVideo();
+          pendingPlay = false;
+        }
+      },
+      onError: function () {
+        /* silently ignore if video unavailable in region */
+      }
+    }
+  });
+};
+
+/* ════════════════════════════════
+   MUSIC BUTTON LOGIC
+════════════════════════════════ */
+var musicBtn   = document.getElementById('music-btn');
+var musicLabel = document.getElementById('music-label');
+var playing    = false;
+
+musicBtn.addEventListener('click', function () {
+  playing = !playing;
+
+  if (playing) {
+    musicLabel.textContent = 'Pause';
+    musicBtn.querySelector('.music-icon').textContent = '⏸';
+
+    if (!ytAPILoading) {
+      /* First click — load API & inject iframe inside this user-gesture */
+      pendingPlay = true;
+      loadYouTubeAPI();
+    } else if (ytAPIReady && ytPlayer) {
+      ytPlayer.playVideo();
+    } else {
+      /* API loading but not ready yet — flag to play on ready */
+      pendingPlay = true;
+    }
+  } else {
+    musicLabel.textContent = 'Play Music';
+    musicBtn.querySelector('.music-icon').textContent = '♪';
+    if (ytAPIReady && ytPlayer) ytPlayer.pauseVideo();
+  }
+});
+
+/* ════════════════════════════════
+   LOADER
+════════════════════════════════ */
+window.addEventListener('load', function () {
+  setTimeout(function () {
     document.getElementById('loader').classList.add('hide');
     spawnPetals();
   }, 1800);
 });
 
-/* ── COUNTDOWN ── */
+/* ════════════════════════════════
+   COUNTDOWN
+════════════════════════════════ */
 function tick() {
-  const target = new Date('2026-05-28T10:00:00');
-  const now    = new Date();
-  const diff   = target - now;
+  var target = new Date('2026-05-28T10:00:00');
+  var now    = new Date();
+  var diff   = target - now;
   if (diff <= 0) {
-    ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(function(id) {
+      document.getElementById(id).textContent = '00';
+    });
     return;
   }
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000)  / 60000);
-  const s = Math.floor((diff % 60000)    / 1000);
+  var d = Math.floor(diff / 86400000);
+  var h = Math.floor((diff % 86400000) / 3600000);
+  var m = Math.floor((diff % 3600000)  / 60000);
+  var s = Math.floor((diff % 60000)    / 1000);
   document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
   document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
   document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
@@ -823,47 +646,32 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
-/* ── SCROLL REVEAL ── */
-const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
+/* ════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════ */
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
     if (e.isIntersecting) e.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el) { revObs.observe(el); });
 
-/* ── PETALS ── */
+/* ════════════════════════════════
+   FLOATING PETALS
+════════════════════════════════ */
 function spawnPetals() {
-  const symbols = ['🌸','🌺','✨','🌼','🪷'];
-  for (let i = 0; i < 12; i++) {
-    const p = document.createElement('div');
+  var symbols = ['🌸','🌺','✨','🌼','🪷'];
+  for (var i = 0; i < 12; i++) {
+    var p = document.createElement('div');
     p.className = 'petal';
     p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-    p.style.left             = Math.random() * 100 + 'vw';
-    p.style.fontSize         = (0.6 + Math.random() * 0.9) + 'rem';
-    p.style.animationDuration  = (8 + Math.random() * 10) + 's';
-    p.style.animationDelay     = (Math.random() * 14) + 's';
+    p.style.left              = (Math.random() * 100) + 'vw';
+    p.style.fontSize          = (0.6 + Math.random() * 0.9) + 'rem';
+    p.style.animationDuration = (8 + Math.random() * 10) + 's';
+    p.style.animationDelay    = (Math.random() * 14) + 's';
     document.body.appendChild(p);
   }
 }
-
-/* ── MUSIC ── */
-const musicBtn   = document.getElementById('music-btn');
-const musicLabel = document.getElementById('music-label');
-const audio      = document.getElementById('bg-audio');
-let playing = false;
-
-musicBtn.addEventListener('click', () => {
-  playing = !playing;
-  if (playing) {
-    audio.play().catch(() => {});
-    musicLabel.textContent = 'Pause';
-    musicBtn.querySelector('.music-icon').textContent = '⏸';
-  } else {
-    audio.pause();
-    musicLabel.textContent = 'Play Music';
-    musicBtn.querySelector('.music-icon').textContent = '♪';
-  }
-});
 </script>
 
 </body>
